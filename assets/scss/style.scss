@@ -218,13 +218,16 @@ ul {
   background-color: var(--black);
   padding: 16px 0 24px;
   text-align: center;
+  margin-top: 32px;
 
   @include respond-to(medium) {
     padding: 25px 0 48px;
     text-align: unset;
+    margin-top: 90px;
   }
   @include respond-to(large) {
     padding: 55px 0 103px;
+    margin-top: 150px;
   }
 
   &__info {
