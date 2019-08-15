@@ -32,7 +32,14 @@ $breakpoints: (
   --gutter-xs: 16px;
   --gutter-md: 24px;
   --gutter-lg: 32px;
+
+  --white: #fff;
+  --black: #000;
+  --mine-shaft: #333333;
+  --dove-gray: #6d6d6d;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,600,700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -40,6 +47,8 @@ $breakpoints: (
 
 body {
   margin: 0;
+  font-family: 'Cabin', sans-serif;
+  color: var(--mine-shaft);
 }
 
 .flex {
@@ -62,8 +71,108 @@ body {
 
 .logo {
   text-align: center;
+  margin: 15px 0;
 
   img {
-    max-width: 180px;
+    max-width: 160px;
+
+    @include respond-to(medium) {
+      max-width: 180px;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  margin: 14px 0;
+  
+  @include respond-to(medium) {
+    margin: 16px 0 32px;
+  }
+  @include respond-to(large) {
+    margin: 32px 0 69px;
+  }
+}
+
+.nav {
+  &--main {
+
+    > ul {
+      display: flex;
+
+      ul {
+        background-color: var(--white);
+        padding: 16px;
+
+        li {
+          margin-bottom: 16px;
+
+          &:last-child {
+            margin-bottom: unset;
+          }
+        }
+
+        @include respond-to(medium) {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          box-shadow: 0 0 3px rgba(0,0,0,.3);
+        }
+      }
+    }
+
+    li {
+      position: relative;
+      margin-bottom: 24px;
+
+      @include respond-to(medium) {
+        margin-right: 24px;
+        margin-bottom: unset;
+      }
+      @include respond-to(large) {
+        margin-right: 43px;
+      }
+
+      &:focus,
+      &:hover {
+        ul {
+          display: block;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--mine-shaft);
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 1.2px;
+        display: block;
+      }
+
+      &.dropdown {
+        > a {
+          padding-right: 24px;
+
+          &:after {
+            content: ' ';
+            background: no-repeat 0 2px transparent url("../img/dropdownArrow.png");
+            background-size: contain;
+            width: 9px;
+            height: 9px;
+            display: inline-block;
+            margin-left: 14px;
+            position: absolute;
+            top: 4px;
+          }
+        }
+      }
+    }
   }
 }
