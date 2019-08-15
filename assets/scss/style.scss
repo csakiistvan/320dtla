@@ -63,9 +63,11 @@ body {
 
   @include respond-to(medium) {
     padding-left: var(--gutter-md);
+    padding-right: var(--gutter-md);
   }
   @include respond-to(large) {
     padding-left: var(--gutter-lg);
+    padding-right: var(--gutter-lg);
   }
 }
 
@@ -93,6 +95,8 @@ ul {
   
   @include respond-to(medium) {
     margin: 16px 0 32px;
+    display: flex;
+    justify-content: space-between;
   }
   @include respond-to(large) {
     margin: 32px 0 69px;
@@ -173,6 +177,37 @@ ul {
           }
         }
       }
+    }
+  }
+}
+
+.cart {
+  @include respond-to(medium) {
+    flex: 20% 0 0;
+  }
+
+  &__link {
+    color: var(--mine-shaft);
+    text-decoration: none;
+    display: block;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    
+    span {
+      opacity: .5;
+    }
+
+    &:after {
+      position: absolute;
+      top: 2px;
+      right: 0;
+      content: ' ';
+      display: block;
+      background: url("../img/cart.png") no-repeat;
+      width: 14px;
+      height: 13px;
+      background-size: contain;
     }
   }
 }
