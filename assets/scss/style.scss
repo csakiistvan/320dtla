@@ -37,6 +37,7 @@ $breakpoints: (
   --black: #000;
   --mine-shaft: #333333;
   --dove-gray: #6d6d6d;
+  --mid-gray: #6a6b72;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,600,700&display=swap');
@@ -208,6 +209,53 @@ ul {
       width: 14px;
       height: 13px;
       background-size: contain;
+    }
+  }
+}
+
+.footer {
+  background-color: var(--black);
+  padding: 16px 0;
+
+  @include respond-to(medium) {
+    padding: 25px 0;
+  }
+  @include respond-to(large) {
+    padding: 55px 0 103px;
+  }
+
+  &__info {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .emoji {
+    width: 1em;
+    height: 1em;
+    margin: 0 3px;
+  }
+
+  &__menu {
+    ul {
+      @include respond-to(medium) {
+        display: flex;
+      }
+    }
+
+    li {
+      margin-bottom: 16px;
+
+      @include respond-to(medium) {
+        margin-bottom: unset;
+        margin-right: 15px;
+      }
+    }
+
+    a {
+      color: var(--mid-gray);
+      text-decoration: none;
     }
   }
 }
