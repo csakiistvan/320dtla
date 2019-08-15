@@ -59,3 +59,11 @@ body {
     padding-left: var(--gutter-lg);
   }
 }
+
+.logo {
+  text-align: center;
+
+  img {
+    max-width: 180px;
+  }
+}

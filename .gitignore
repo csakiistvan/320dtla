@@ -1,6 +1,7 @@
 .sass-cache
 node_modules*
 *.css.map
+*.css
 dist*
 package-lock.json
 .DS_Store
