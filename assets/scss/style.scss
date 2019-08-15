@@ -215,10 +215,12 @@ ul {
 
 .footer {
   background-color: var(--black);
-  padding: 16px 0;
+  padding: 16px 0 24px;
+  text-align: center;
 
   @include respond-to(medium) {
-    padding: 25px 0;
+    padding: 25px 0 48px;
+    text-align: unset;
   }
   @include respond-to(large) {
     padding: 55px 0 103px;
